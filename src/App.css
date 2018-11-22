@@ -7,7 +7,7 @@
     border-radius: 4px;
 }
 
-textarea {
+textarea, input {
     width: 98%;
     margin: auto;
     margin-bottom: 1rem; 

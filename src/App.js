@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MadLibCreator from './components/createMadLib';
+import AnswerMadLib from './components/fillMadlib';
 import './App.css';
 
 const regExForPrompt = new RegExp('<.*?>')
@@ -18,7 +19,7 @@ class App extends Component {
   }
 
   handleSubmit = () => {
-    if (!this.state.text){return};
+    if (!this.state.text) { return };
     const ml = this.state.text;
     const firstPrompt = ml.match(regExForPrompt)
     if (!firstPrompt) {
@@ -33,21 +34,30 @@ class App extends Component {
     }
   }
 
-  findPlayerPrompt = () => {
-    console.log(this.state.madLib);
+  nextPrompt = () => {
+    
   }
 
   render() {
+    const { madLib, prompt, done } = this.state;
+
+    if (done) { return (<p>{madLib}</p>) }
+    if (prompt) {
+      return (
+        <AnswerMadLib
+        handleInputChange={this.handleInputChange}
+        prompt={this.state.prompt}
+        text={this.state.text}
+        nextPrompt={this.nextPrompt}
+        />)
+    }
     return (
-      <div>
-        <header></header>
-        <MadLibCreator
+      <MadLibCreator
         handleInputChange={this.handleInputChange}
         handleMadLibSubmit={this.handleSubmit}
         text={this.state.text}
-        />
-      </div>
-    );
+      />
+    )
   }
 }
 
