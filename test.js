@@ -1,4 +1,4 @@
-const madLib = 'There once was a <ADJECTIVE> <MAGICAL BEAST>, lived in the <ADJECTIVE> <PLACE>. Then he/she died...';
+const madLib = 'hello my name is bob';
 const answers = ['Cute','Unicorn','Fantastic','Forest']
 
 const thing = new RegExp('<.*?>');

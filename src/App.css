@@ -1,0 +1,14 @@
+.component {
+    margin: .5rem;
+    padding: 1rem;
+    border: 2px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 1rem; 
+}
