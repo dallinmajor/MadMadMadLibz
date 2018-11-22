@@ -2,11 +2,11 @@
   "name": "MadMadMadLibz",
   "version": "0.1.0",
   "main": "index.js",
-  "predeploy": "yarn build",
-  "deploy": "gh-pages -d build",
   "author": "Dally Wally <dallin.watac.major@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "test",
