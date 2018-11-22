@@ -9,12 +9,11 @@ class App extends Component {
   state = {
     madLib: null,
     prompt: null,
-    text: null,
+    text: '',
     done: false
   }
 
   handleInputChange = (e) => {
-    console.log(e.target.value)
     this.setState({ text: e.target.value });
   }
 
@@ -35,13 +34,34 @@ class App extends Component {
   }
 
   nextPrompt = () => {
-    
+
+    const {text, madLib} = this.state;
+    if(!text){return};
+    const answeredMadLib = madLib.replace(regExForPrompt, text);
+    const newPrompt = answeredMadLib.match(regExForPrompt)
+
+    if (newPrompt) {
+      this.setState({
+        madLib: answeredMadLib,
+        prompt: newPrompt[0],
+        text: ""
+      })
+    } else {
+      this.setState({
+        madLib: answeredMadLib,
+        done: true
+      }) 
+    }
   }
 
   render() {
     const { madLib, prompt, done } = this.state;
 
-    if (done) { return (<p>{madLib}</p>) }
+    if (done) { return (
+      <div className='container'>
+        <div className='component'>{madLib}</div>
+      </div>
+    ) }
     if (prompt) {
       return (
         <AnswerMadLib

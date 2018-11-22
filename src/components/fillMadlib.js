@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AnswerMadLib = ({handleInputChange, prompt, text, nextPrompt}) => {
+    console.log(prompt);
     let currentPrompt = prompt.split('');
     currentPrompt.pop();
     currentPrompt.shift();
@@ -12,7 +13,7 @@ const AnswerMadLib = ({handleInputChange, prompt, text, nextPrompt}) => {
             </div>
             <form className='component'>
                 <h4>{currentPrompt.join('')}</h4>
-                <input onChange={e => handleInputChange(e)}/>
+                <input value={text} onChange={e => handleInputChange(e)}/>
                 <button onClick={e => {e.preventDefault(); nextPrompt()}} className="btn btn-primary">Next</button>
             </form>
         </div>
