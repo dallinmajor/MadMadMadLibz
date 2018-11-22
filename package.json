@@ -1,18 +1,23 @@
 {
   "name": "MadMadMadLibz",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://dallinmajor.github.io/MadMadMadLibz/",
-  "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
+  "main": "index.js",
+  "predeploy": "yarn build",
+  "deploy": "gh-pages -d build",
+  "author": "Dally Wally <dallin.watac.major@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "test",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "gh-pages": "^1.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -22,5 +27,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://dallinmajor.github.io/MadMadMadLibz/"
 }
